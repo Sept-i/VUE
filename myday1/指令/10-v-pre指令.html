@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指令</title>
+</head>
+
+<body>
+    <!--  
+          v-pre     
+          填充原始信息
+          ①显示原始信息，跳过编译(解析)过程 
+    -->
+    <div id="app">
+        <div v-pre="message">{{message}}</div>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+              message:"<h2>春</h2>"
+            }
+        })
+    </script>
+</body>
+
+</html>

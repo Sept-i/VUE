@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data:数据对象</title>
+</head>
+
+<body>
+    <!-- 🚩 vue中用到的数据　定义在 data 中，data 中可以写复杂类型的数据
+    渲染复杂数据类型时，遵守js语法 即对象用点，数组用索引 -->
+    <div id="app">
+        {{message}}
+       
+        <h1>{{school.name}}</h1>
+        <ul>
+            <li>{{campus[0]}}</li>
+        </ul>
+   
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#app',  //el的作用 ：设置Vue实例管理(挂载)的元素
+            data:{
+                message:'hello Vue!',
+                school:{
+                    name:'武汉黑马',
+                    mobile:'400-123-123'
+                },
+                campus:["武汉校区","上海校区","深圳校区",]
+            }
+        })
+    </script>
+</body>
+
+</html>

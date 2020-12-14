@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 🚩v-on:为元素绑定事件 ，绑定的方法定义在　methods　属性中
+       1. v-on:事件="事件处理函数"
+       2. @事件="事件处理函数"
+    两种等价:v-on:click="doIt"
+            v-on简写  @click="doIt"-->
+    <div id="app">
+
+        <div>{{num}}</div>
+        <button v-on:click="add">按钮1</button>
+        <button v-on:click="add()">按钮2</button>
+        <!-- 可以简写，两种等价 -->
+        <button @click="add">按钮1</button>
+        <button @click="add()">按钮2</button>
+
+        <!-- 事件函数参数传递方式 -->
+        <!-- add和add()都可以，不过add()可以传实参 -->
+        <button v-on:click="test(123,'abc')">按钮5</button>
+
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                num:1
+            },
+            methods: {
+                add() {
+                    this.num++
+                },
+                test(num,str,evnet){
+                    console.log(event); //事件对象event
+                    console.log(num,str);
+                }
+            }
+        })
+        // 事件绑定-参数传递
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!-- 🚩 方法中通过 this 来获取data中的数据
+ v-show:根据真假切换元素的显示状态
+原理:修改元素的 display 
+值为true 元素显示 false 元素隐藏
+数据改变后,对应的元素显示状态会 同步更新 -->
+<div id="app">
+    <input type="button" value="切换显示状态" @click="changeIsShow">
+    <img v-show=isShow src="ye2.jpg" alt="">
+</div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isShow: false
+            },
+            methods: {
+                changeIsShow: function () {
+                    this.isShow = !this.isShow //这里的this是vue实例对象app
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

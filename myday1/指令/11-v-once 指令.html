@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指令</title>
+</head>
+
+<body>
+ <!-- 2. v-once  只编译一次，
+应用场景：如果显示的信息后续不需要再修改，可以用v-once ，好处：提高性能 -->
+    <div id="app">
+        <div v-once>{{content}}</div>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+               content:"hello"
+            }
+        })
+        console.log(app);
+
+        // 1. 数据响应式：当data 中的数据改变时，模板里面的数据也跟着改变
+    </script>
+</body>
+
+</html>

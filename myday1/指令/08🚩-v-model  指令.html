@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">   
+        <!-- 只能用在表单中 -->
+        <!-- v-model: 获取和设置【表单元素的值】(实现双向数据绑定：在页面上改变任意一个message的内容，其他的message的内容会跟着一起改变) -->
+        <!-- v-model双向绑定：绑定的数据和表单元素的值互相关联就是双向绑定，无论修改谁，另外一个都会跟着改变 -->
+     
+        <!-- @keyup.enter是键盘弹起，回车事件 -->
+
+       <!-- ① -->
+       <input type="button" value="修改message" @click="setM">
+       <!-- ② -->
+        <input type="text" v-model="message" @keyup.enter="getM" name="" id="">
+       <h2>{{message}}</h2>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+              message:"黑马程序员！"
+            },
+            methods:{
+                getM:function(){
+                    alert(this.message)
+                },
+                setM:function(){
+                    this.message="秋刀鱼"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

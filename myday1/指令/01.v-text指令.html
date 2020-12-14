@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指令</title>
+</head>
+
+<body>
+    <!-- 🚩v-text：设置标签的文本内容，，只能写在标签里面
+
+    v-text会替换标签的全部内容 
+    {{}}差值表达式可以替换指定内容
+ -->
+    <div id="app">
+        <h2 v-text="message"></h2>
+        <!-- 👉还可以字符串拼接哦 -->
+        <!-- <h2 v-text="message+'⚪'"></h2> -->
+        <h2 v-text="info"></h2>
+        <h2>{{info}}武汉武汉</h2>
+        <!-- <h2>{{info+'⚪'}}武汉武汉</h2> -->
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> //引入 vue.js 在全局作用域下就有了Vue
+    <script>
+        var app = new Vue({
+            el: '#app', //el的作用 ：设置Vue实例管理(挂载)的元素
+            data: {
+                message: '黑马程序员',
+                info:'web前端'
+            }
+        })
+    </script>
+</body>
+
+</html>

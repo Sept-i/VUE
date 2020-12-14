@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>{{msg}}</div>
+        <!-- {{}} 是差值表达式 可以做一些简单的操作，如：三元表达式，数字相加，字符串拼接 -->
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 场景： 数据放到结构里面
+    var vm = new Vue({
+        el: "#app", //em-> element元素  监控id=app的结构区域
+        data: { //data 数据
+            msg: "hello word"
+        }
+    })
+
+    //vue中，并没有进行 DOM 操作
+</script>
+
+</html>

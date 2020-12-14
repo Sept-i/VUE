@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 视图层 -->
+    <div id="app">
+        <h1>简单加法计算器</h1>
+        <div>
+            数值a：<input type="text" v-model="a">
+            <select v-model="type">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="÷">÷</option>
+
+            </select>
+            数值b：<input type="text" v-model="b">
+        </div>
+            
+       
+        <div><button @click="add">计算</button></div>
+        <div>结果：<span v-html="result"></span></div>
+
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        // 模型区
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                a: "", //初始化值
+                b: "",
+                type:"+",
+                result: ""
+            },
+            methods: {
+                add() {
+                    switch(this.type){
+                        case "+" :
+                        this.result=Number(this.a) + Number(this.b)
+                        break;
+                        case "-" :
+                        this.result=Number(this.a) - Number(this.b)
+                        break;
+                        case "x" :
+                        this.result=Number(this.a) * Number(this.b)
+                        break;
+                        case "÷" :
+                        this.result=Number(this.a) / Number(this.b)
+                        break;
+                    }
+                    // 实现计算逻辑
+                    // 因为这里得到的是字符串，要转化成数字类型 parseInt
+                    // Number和parseInt都可以
+                    // this.result = Number(this.a) + Number(this.b)
+
+                }
+            }
+        })
+    </script>
+    <!-- 双向数据绑定 -->
+</body>
+
+</html>

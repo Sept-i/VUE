@@ -1,0 +1,18 @@
+vue全家桶: vue基础 + axios(vue-resoure) + vue-router(vue路由) + vuex(状态管理) + 第三方的UI框架
+
+1.vue基础：
+    day1
+    a. 差值表达式 {{}}
+
+    b. 指令：原理自定义属性
+    v-clock:用来解决差值表达式的闪烁问题
+
+    v-text:只解析文本
+    v-html:解析标签+文本
+
+    v-pre:不会解析插值表达式，原文输出
+    v-once:只解析一次数据
+
+    (重要)v-model:只能用在表单中(input select textarea 可以使用) 实现双向数据绑定
+    v-on:绑定事件
+    (重要)v-bind:绑定属性

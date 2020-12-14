@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-for 根据数据生成列表结构，经常和数组结合使用
+       语法：(item,index)in 数据
+       item每一项
+       index：索引
+        -->
+       <div id="app">
+           <ul>
+               <li v-for="(item,index) in arr">
+                   {{index}}春夏秋冬:{{item}}
+               </li>
+           </ul>
+           <h2 v-for="item in vegetables">
+               {{item.name}}
+           </h2>
+       </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+                arr:["春","夏","秋","冬"],
+                vegetables:[
+                    {name:"真冷"},
+                    {name:"zhenlen"},
+                ]
+            },
+            methods:{
+                add:function(){
+                    this.vegetables.push({name:"八月"})
+                },
+                remove:function(){
+                    this.vegetables.remove({name:"九月"})
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-show 和 v-if效果都一样(切换元素的显示状态),,但有区别：v-show:显示隐藏文本,标签始终存在，v-if操作dom文档树，隐藏后，标签会从文档树中消失 -->
+        <input type="button" value="切换显示" @click="toggleIsShow">
+        <p v-if="isShow">黑马程序员</p>
+        <p v-show="isShow">黑马程序员 v-show</p>
+        <h2>冷死了</h2>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+                isShow:false
+            },
+            methods:{
+                toggleIsShow:function(){
+                    this.isShow=!this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

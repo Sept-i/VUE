@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指令</title>
+</head>
+
+<body>
+    <!-- 🚩v-html：设置标签的文本内容，，只能写在标签里面
+        v-html和v-text区别：内容中有 html 结构会被解析成标签
+        v-text是只解析文本
+        v-html 解析标签+文本
+
+ -->
+    <div id="app">
+        <p v-html="content"></p>
+        <p v-text="content"></p>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+               content:"<a href='#'>武湖武湖</a>"
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-cloak>{{message}}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "秋刀鱼"
+            }
+        })
+    </script>
+
+    <script type="text/javascrpt">
+        <!--
+        
+       
+         v-cloak 纯文本刷新，不会显示{{}}花括号————闪动
+         v-cloak 没有值 
+         v-cloak指令的用法:
+              
+         1提供样式 [v-cloak]{ 
+                 display:none;
+             }
+         2 在插值表达式中添加 v-cloak 指令
+
+         3. {{}}插值表达式存在的问题：“闪动”
+         为什么会有此问题？因为js从上往下执行。他先是看到{{msg}}，再去执行vue
+         
+         如何解决？ 
+         解决1：把引入的vue.js文件放到title下面
+         解决2：用v-cloak指令
+          背后的原理：手动通过样式隐藏内容，然后在内存中进行值的替换，替换好之后再显示最终的结果
+       
+        -->
+    </script>
+</body>
+
+</html>
